@@ -1,0 +1,414 @@
+/* Styling dasar */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #2b2b2b, #3a3a3a); /* Background gradient */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Memastikan body memenuhi tinggi viewport */
+    overflow-x: hidden; /* Menghindari scroll horizontal */
+    color: #ffffff; /* Ubah warna teks menjadi putih untuk kontras yang lebih baik */
+    text-align: center; /* Menyelaraskan teks di seluruh halaman */
+}
+
+/* Header dan navigasi */
+header {
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang semi-transparan */
+    color: #000; /* Ganti warna teks menjadi hitam untuk kontras */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Bayangan lembut untuk header */
+    border-bottom: 2px solid #000000; /* Garis bawah untuk header */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Item navigasi ditampilkan secara horizontal */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #000000; /* Warna tautan hitam */
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    padding: 5px 10px; /* Memberikan padding pada tautan */
+    border-radius: 5px; /* Sudut yang melengkung pada tautan */
+    transition: background 0.3s, color 0.3s; /* Transisi saat hover */
+}
+
+nav ul li a:hover {
+    background-color: #f39c12; /* Warna latar belakang saat hover */
+    color: #000; /* Warna teks saat hover */
+}
+
+/* Home section */
+#home {
+    flex: 1; /* Mengisi ruang yang tersisa dalam body */
+    min-height: 100vh; /* Pastikan tinggi minimal adalah 100% dari tinggi viewport */
+    overflow-y: auto; /* Memungkinkan scroll vertikal */
+    padding: 20px; /* Memberikan sedikit ruang di sekitar konten */
+}
+
+/* Hero section */
+#hero {
+    text-align: center;
+    padding: 290px 50px;
+    background: rgba(0, 0, 0, 0.5) url('./images/LensMagic.jpg') no-repeat center center; /* Gambar latar belakang ditambahkan */
+    background-size: cover; /* Pastikan gambar mengisi seluruh area */
+    background-attachment: fixed; /* Mengunci gambar latar belakang agar tetap di tempat */
+    border-radius: 10px; /* Sudut yang melengkung */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
+    margin: 20px; /* Jarak dari tepi halaman */
+    position: relative;
+}
+
+#hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#welcome-message {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Section Gallery */
+#gallery {
+    padding: 20px;
+    min-height: 100vh;
+    flex: 1;
+    overflow-y: auto; /* Memungkinkan scroll vertikal */
+    position: relative; /* Menjadikan posisi relatif agar bisa melapisi */
+    z-index: 1; /* Pastikan gallery berada di atas */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid responsif */
+    gap: 15px; /* Jarak antara item grid */
+}
+
+.gallery-item {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1); /* Warna latar belakang semi-transparan */
+    border-radius: 10px; /* Sudut yang melengkung */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s; /* Transisi saat hover */
+    position: relative;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih kuat saat hover */
+}
+
+/* Gaya gambar dalam galeri */
+.gallery-item img {
+    width: 100%; /* Mengisi lebar item */
+    height: auto; /* Tinggi otomatis untuk menjaga rasio */
+    border-radius: 10px; /* Sudut yang melengkung */
+    object-fit: cover; /* Menjaga rasio gambar */
+    transition: transform 0.3s ease; /* Transisi saat hover */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.1); /* Zoom efek pada gambar saat hover */
+}
+
+/* Menyediakan class portrait dan landscape */
+.portrait {
+    aspect-ratio: 3 / 4; /* Rasio aspek untuk gambar portrait */
+}
+
+.landscape {
+    aspect-ratio: 5 / 3; /* Rasio aspek untuk gambar landscape */
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang semi-transparan */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Memastikan footer berada di bawah */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); /* Bayangan lembut untuk footer */
+}
+
+/* --- Responsive Design dengan Media Queries --- */
+
+/* Ukuran layar kecil (mobile) */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block; /* Item navigasi ditampilkan dalam kolom */
+        margin: 10px 0;
+    }
+
+    #hero {
+        padding: 30px 10px; /* Mengurangi padding pada hero section */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Mengubah jumlah kolom */
+        gap: 10px; /* Jarak antara item grid */
+    }
+}
+
+/* Ukuran layar medium (tablet) */
+@media (max-width: 1024px) {
+    nav ul li {
+        display: block; /* Item navigasi ditampilkan dalam kolom */
+        margin: 10px 0;
+    }
+
+    #hero {
+        padding: 40px 20px; /* Mengatur padding */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Mengubah jumlah kolom */
+        gap: 15px; /* Jarak antara item grid */
+    }
+}
+
+/* CSS untuk scroll behavior */
+html {
+    scroll-behavior: smooth; /* Membuat scroll halus */
+}
+
+/* Gaya untuk judul gallery */
+h3 {
+    margin-top: 45px; /* Jarak atas judul */
+    margin-bottom: 10px; /* Jarak bawah judul */
+    text-align: left; /* Menyelaraskan teks ke kiri */
+    font-size: 2.0em; /* Ukuran font */
+    color: #f39c12; /* Warna teks untuk judul */
+}
+
+/* Ikon media sosial di footer */
+.social-media a {
+    color: #fff; /* Warna teks */
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    margin: 0 10px; /* Jarak antar ikon */
+    font-size: 20px; /* Ukuran font untuk ikon */
+}
+
+.social-media a:hover {
+    color: #f39c12; /* Warna hover pada ikon */
+    text-shadow: 0 0 5px #f39c12; /* Efek bayangan saat hover */
+}
+
+/* Gaya untuk modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tutorial-section {
+    max-width: 100%;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-section .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tutorial-section h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tutorial-section p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.tutorial-section h3 {
+    color: #444;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    background-color: #e6f3ff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tutorial-section h3:hover {
+    background-color: #d0e8ff;
+}
+
+.tutorial-section h3::after {
+    content: ' ▼';
+    font-size: 0.8em;
+    float: right;
+}
+
+.tutorial-section h3.active::after {
+    content: ' ▲';
+}
+
+.tutorial-section .content {
+    display: none;
+    padding: 1rem;
+    background-color: #ffffff;
+    border: 1px solid #e6f3ff;
+    border-radius: 0 0 5px 5px;
+    margin-top: -5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.tutorial-section li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.tutorial-section li::before {
+    content: "\2022";
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.tutorial-section .highlight {
+    background-color: #e6f3ff;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.tutorial-section .content p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+.tutorial-section .content ul {
+    background-color: #f5f9ff;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.tutorial-section .content li {
+    color: #444;
+}
+
+.tutorial-section .content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-section .image-caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+#gallery h2 {
+    font-size: 3.5em;
+    color: #FFFFFF; /* Warna putih solid */
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 
+        3px 3px 0 #000,
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    padding: 20px 0;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+#gallery h2::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    opacity: 0.3;
+    z-index: -1;
+    animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 200px;
+    }
+}
+
+/* Untuk responsivitas */
+@media (max-width: 768px) {
+    #gallery h2 {
+        font-size: 2.5em;
+        letter-spacing: 3px;
+    }
+}

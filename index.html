@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LensMagicid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+    </section>
+
+    <div id="welcome-message">
+        Selamat Datang di LensMagicid
+    </div>
+
+    <section class="tutorial-section">
+        <div class="content-wrapper">
+            <h2>Tutorial Memakai Kamera DSLR dan Mirrorless</h2>
+            <p>Jika Anda baru mengenal fotografi, menggunakan kamera DSLR atau mirrorless bisa terasa menantang. Namun, dengan pemahaman yang tepat tentang pengaturan dan fitur, Anda bisa mulai mengambil foto yang luar biasa.</p>
+            <p>Berikut adalah beberapa konsep dasar yang perlu Anda ketahui:</p>
+
+            <h3>Aperture (Bukaan Lensa)</h3>
+            <div class="content">
+                <p>Aperture mengacu pada seberapa lebar atau sempit bukaan di dalam lensa kamera Anda. Ini diukur dalam f-stop. Semakin rendah angka f (misalnya, f/1.8), semakin lebar bukaan dan lebih banyak cahaya yang masuk ke sensor. Ini membantu menciptakan latar belakang blur (bokeh) yang indah.</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Aperture_diagram.svg/1200px-Aperture_diagram.svg.png" alt="Diagram Aperture">
+                <p class="image-caption">Gambar: Diagram berbagai ukuran aperture</p>
+                <p>Contoh penggunaan aperture:</p>
+                <ul>
+                    <li>Fokus pada subjek: Gunakan aperture lebar (f/2.8 atau lebih rendah) untuk memisahkan subjek dari latar belakang.</li>
+                    <li>Pemandangan luas: Gunakan aperture kecil (f/8 atau lebih tinggi) untuk mendapatkan fokus yang lebih dalam.</li>
+                </ul>
+            </div>
+
+            <h3>ISO (Sensitivitas Cahaya)</h3>
+            <div class="content">
+                <p>ISO mengukur seberapa sensitif sensor kamera Anda terhadap cahaya. Angka ISO yang rendah (misalnya, 100) baik untuk kondisi pencahayaan yang terang, sementara angka ISO yang tinggi (misalnya, 1600 atau lebih) cocok untuk kondisi rendah. Namun, peningkatan ISO dapat menyebabkan noise pada gambar.</p>
+                <img src="https://swift-thumbor.sirclocdn.com/unsafe/0x0/filters:format(webp):quality(80)/admin.focusnusantara.com/media/wysiwyg/Article/Screenshot_2023-11-16_103840.png" alt="Perbandingan ISO">
+                <p class="image-caption">Gambar: Perbandingan efek ISO rendah dan tinggi</p>
+                <p>Tips penggunaan ISO:</p>
+                <ul>
+                    <li>Gunakan ISO rendah untuk foto di siang hari.</li>
+                    <li>Naikkan ISO di ruangan gelap atau saat memotret malam hari, tetapi hati-hati dengan noise.</li>
+                </ul>
+            </div>
+
+            <h3>Shutter Speed (Kecepatan Rana)</h3>
+            <div class="content">
+                <p>Shutter speed mengacu pada berapa lama rana kamera terbuka untuk membiarkan cahaya masuk. Ini diukur dalam detik atau pecahan detik (misalnya, 1/500 detik). Kecepatan rana yang cepat dapat membekukan gerakan, sedangkan kecepatan rana yang lambat dapat menghasilkan efek blur yang artistik.</p>
+                <img src="https://www.adobe.com/creativecloud/photography/discover/media_14791f531a97a012aad86bfe55fd520d77a783270.png?width=750&format=png&optimize=medium" alt="Efek Shutter Speed">
+                <p class="image-caption">Gambar: Perbandingan efek shutter speed cepat dan lambat</p>
+                <p>Contoh penggunaan shutter speed:</p>
+                <ul>
+                    <li>Menangkap gerakan cepat: Gunakan kecepatan rana cepat (1/1000 detik) untuk foto olahraga atau hewan yang bergerak cepat.</li>
+                    <li>Efek gerakan: Gunakan kecepatan rana lambat (1/30 detik) untuk menangkap gerakan air atau lampu lalu lintas yang bergerak.</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <h3>Kesimpulan</h3>
+                <div class="content">
+                    <p>Memahami tiga pengaturan dasar ini—aperture, ISO, dan shutter speed—adalah langkah awal yang penting untuk menjadi fotografer yang lebih baik. Dengan praktik dan eksperimen, Anda akan dapat menemukan gaya dan teknik Anda sendiri dalam fotografi.</p>
+                    <img src="https://www.djkn.kemenkeu.go.id/files/images/2023/12/WhatsApp_Image_2023-12-19_at_14_47_405.jpeg" alt="Segitiga Eksposur">
+                    <p class="image-caption">Gambar: Segitiga eksposur menunjukkan hubungan antara aperture, ISO, dan shutter speed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://www.instagram.com/LensMagicid/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 LensMagicid. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const headers = document.querySelectorAll('.tutorial-section h3');
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                    } else {
+                        content.style.display = 'block';
+                    }
+                });
+            });
+        });
+
+        // Kode JavaScript untuk memuat galeri
+        fetch('/gallery')
+            .then(response => response.json())
+            .then(data => {
+                const galleryContainer = document.querySelector('.gallery-grid');
+                if (galleryContainer) {
+                    data.portrait.concat(data.landscape).forEach(photo => {
+                        const img = document.createElement('img');
+                        img.src = photo.url;
+                        img.alt = photo.orientation;
+                        img.className = photo.orientation;
+                        const div = document.createElement('div');
+                        div.className = 'gallery-item';
+                        div.appendChild(img);
+                        galleryContainer.appendChild(div);
+                    });
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>

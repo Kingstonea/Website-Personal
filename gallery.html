@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - LensMagicid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="gallery">
+        <h2>GIIAS 2024</h2>
+        <h3>Portrait</h3>
+        <div class="gallery-grid" id="portrait-gallery">
+            <!-- Gambar portrait akan dimuat di sini -->
+        </div>
+        
+        <h3>Landscape</h3>
+        <div class="gallery-grid" id="landscape-gallery">
+            <!-- Gambar landscape akan dimuat di sini -->
+        </div>
+    </section>
+
+    <!-- Tambahkan div untuk modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Fotografi Indonesia</p>
+    </footer>
+
+    <script>
+        // Mengambil data galeri dari server dan menampilkannya di halaman
+        fetch('/gallery')
+            .then(response => response.json())
+            .then(data => {
+                const portraitGallery = document.getElementById('portrait-gallery');
+                const landscapeGallery = document.getElementById('landscape-gallery');
+
+                function createGalleryItem(photo, altText) {
+                    const galleryItem = document.createElement('div');
+                    galleryItem.classList.add('gallery-item', photo.orientation);
+                    galleryItem.innerHTML = `
+                        <img src="${photo.url}" alt="${altText}" onclick="openModal(this.src)">
+                    `;
+                    return galleryItem;
+                }
+
+                data.portrait.forEach(photo => {
+                    portraitGallery.appendChild(createGalleryItem(photo, "Gambar Portrait"));
+                });
+
+                data.landscape.forEach(photo => {
+                    landscapeGallery.appendChild(createGalleryItem(photo, "Gambar Landscape"));
+                });
+            })
+            .catch(error => console.error('Error fetching gallery:', error));
+
+        // Fungsi untuk membuka modal
+        function openModal(imgSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+        }
+
+        // Menutup modal saat mengklik tanda silang
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+
+        // Menutup modal saat mengklik di luar gambar
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+ 
+</body>
+</html>
